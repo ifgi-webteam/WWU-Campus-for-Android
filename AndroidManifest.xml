@@ -1,23 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ifgi.android"
-    android:versionCode="201"
-    android:versionName="2.0.1" >
+    android:versionCode="202"
+    android:versionName="2.1.0" >
+
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="WWU Campusplan"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".WebViewActivity"
-            android:theme="@android:style/Theme.NoTitleBar">
-            
+        <activity android:name=".WebViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
