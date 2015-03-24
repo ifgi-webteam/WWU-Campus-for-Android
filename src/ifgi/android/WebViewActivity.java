@@ -17,7 +17,7 @@ import android.webkit.WebViewClient;
 @SuppressLint("SetJavaScriptEnabled")
 public class WebViewActivity extends Activity {
 
-	public static String APP_URL = "http://app.uni-muenster.de/";
+	public static String APP_URL = "https://app.uni-muenster.de/";
 
 	private WebView webView;
 
@@ -55,6 +55,10 @@ public class WebViewActivity extends Activity {
 		webView.getSettings().setAppCacheEnabled(true);
 		webView.getSettings().setDatabaseEnabled(true);
 		webView.getSettings().setDomStorageEnabled(true);
+
+        // define databasePath, so localstorage won't get lost after app restart
+        String databasePath = this.getApplicationContext().getDir("databases", Context.MODE_PRIVATE).getPath();
+        webView.getSettings().setDatabasePath(databasePath);
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
