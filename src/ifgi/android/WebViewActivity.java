@@ -6,9 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.MailTo;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.GeolocationPermissions;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -17,7 +19,7 @@ import android.webkit.WebViewClient;
 @SuppressLint("SetJavaScriptEnabled")
 public class WebViewActivity extends Activity {
 
-	public static String APP_URL = "https://app.uni-muenster.de/";
+	public static String APP_URL = "http://app.uni-muenster.de/";
 
 	private WebView webView;
 
@@ -126,7 +128,7 @@ public class WebViewActivity extends Activity {
 			startActivity(intent);
 			return true;
 		}
-	}
+    }
 
 	private class mWebChromeClient extends WebChromeClient {
 
